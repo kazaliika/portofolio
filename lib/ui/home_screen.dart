@@ -34,15 +34,52 @@ class HomeScreen extends StatelessWidget {
   }
 
   Drawer _Drawer(context) => Drawer(
-    child: ListView(
-    children: [
-      DrawerHeader(child: Text("App Info")),
+    child:
+      ListView(
+        children: [
+          DrawerHeader(
+            child:
+              Text("App Info",
+              style: TextStyle(
+              color: Colors.deepOrange,
+              fontSize: 24),
+          ),
+          ),
       ListTile(
-        leading: Icon(Icons.person_off),
-        title: Text("Account"),
-      ),ListTile(
-        leading: Icon(Icons.output),
-        title: Text("Exit"),
+        leading: Icon(
+            Icons.person_outlined,
+            size: 35
+        ),
+        title: Text("Account",
+          style: TextStyle(
+              fontSize: 24,
+              color: Colors.deepOrange
+          ),
+        ),
+      ),
+          ListTile(
+        leading: Icon(
+            Icons.settings_applications,
+            size: 35
+        ),
+        title: Text("Settings",
+          style: TextStyle(
+              fontSize: 24,
+              color: Colors.deepOrange
+          ),
+        ),
+      ),
+          ListTile(
+        leading: Icon(
+            Icons.exit_to_app,
+            size: 35
+        ),
+        title: Text("Exit",
+          style: TextStyle(
+              fontSize: 24,
+              color: Colors.deepOrange
+          ),
+        ),
       ),
     ],
   ),
