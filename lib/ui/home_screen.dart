@@ -8,13 +8,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _AppBar(context),
-      body: Image.asset(
-        'assets/IMG.jpg',
-        width: 200,
-        height: 200,
+      body: InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AddStoryScreen()));
+        },
+        child: Center(
+          child: Image.asset(
+            'assets/IMG.jpg',
+            width: 200,
+            height: 200,
+          ),
+        ),
       ),
       drawer: _Drawer(context),
       floatingActionButton: FloatingActionButton(
+        shape: CircleBorder(),
         onPressed: () {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => AddStoryScreen()));
