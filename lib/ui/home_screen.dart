@@ -8,94 +8,87 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _AppBar(context),
-      body: Center(child: Text("No Story for Today")),
+      body: Image.asset(
+        'assets/IMG.jpg',
+        width: 200,
+        height: 200,
+      ),
       drawer: _Drawer(context),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => AddStoryScreen())
-        );
-      },
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AddStoryScreen()));
+        },
         child: Icon(Icons.add_chart),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[BottomNavigationBarItem(
-            icon: Icon(Icons.home_work_sharp),
-            label: 'Home'
-        ),
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.search_off),
-              label: 'Search'
-          ),
+              icon: Icon(Icons.home_work_sharp), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search_off), label: 'Search'),
         ],
       ),
     );
   }
 
   Drawer _Drawer(context) => Drawer(
-    child:
-      ListView(
-        children: [
-          DrawerHeader(
-            child:
-              Text("App Info",
-              style: TextStyle(
-                  color: Color(0xFFF97B22),
-              fontSize: 24),
-          ),
-          ),
-      ListTile(
-        leading: Icon(
-            Icons.person_outlined,
-            size: 35
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Text(
+                "App Info",
+                style: TextStyle(color: Color(0xFFF97B22), fontSize: 24),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.person_outlined, size: 35),
+              title: Text(
+                "Account",
+                style: TextStyle(fontSize: 24, color: Color(0xFFF97B22)),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings_applications, size: 35),
+              title: Text(
+                "Settings",
+                style: TextStyle(fontSize: 24, color: Color(0xFFF97B22)),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app, size: 35),
+              title: Text(
+                "Exit",
+                style: TextStyle(fontSize: 24, color: Color(0xFFF97B22)),
+              ),
+            ),
+          ],
         ),
-        title: Text("Account",
-          style: TextStyle(
-              fontSize: 24,
-              color: Color(0xFFF97B22)
-          ),
-        ),
-      ),
-          ListTile(
-        leading: Icon(
-            Icons.settings_applications,
-            size: 35
-        ),
-        title: Text("Settings",
-          style: TextStyle(
-              fontSize: 24,
-              color: Color(0xFFF97B22)
-          ),
-        ),
-      ),
-          ListTile(
-        leading: Icon(
-            Icons.exit_to_app,
-            size: 35
-        ),
-        title: Text("Exit",
-          style: TextStyle(
-              fontSize: 24,
-              color: Color(0xFFF97B22)
-          ),
-        ),
-      ),
-    ],
-  ),
-  );
+      );
 
   AppBar _AppBar(context) => AppBar(
-    iconTheme: IconThemeData(color: Color(0xFFFEE8B0)),
-    title: Text(
-    "Jumawa",
-    style: TextStyle(
-      color: Color(0xFFFEE8B0),
-  ),
-  ),
-    backgroundColor:  Color(0xFFF97B22),
-    centerTitle: true,
-    actions: [IconButton(onPressed: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => InfoDetailScreen())
+        iconTheme: IconThemeData(color: Color(0xFFFEE8B0)),
+        title: Text(
+          "Jumawa",
+          style: TextStyle(
+            color: Color(0xFFFEE8B0),
+          ),
+        ),
+        backgroundColor: Color(0xFFF97B22),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InfoDetailScreen()));
+              },
+              icon: Icon(
+                Icons.info,
+                color: Color(0xFFFEE8B0),
+              ))
+        ],
       );
-    }, icon: Icon(Icons.info,color: Color(0xFFFEE8B0),))],
-  );
 }
