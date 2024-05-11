@@ -1,35 +1,54 @@
 import 'package:flutter/material.dart';
 
-class InfoDetailScreen extends StatelessWidget {
+class InfoDetailScreen extends StatefulWidget {
   const InfoDetailScreen({super.key});
 
   @override
+  State<InfoDetailScreen> createState() => _InfoDetailScreenState();
+}
+
+class _InfoDetailScreenState extends State<InfoDetailScreen> {
+  final double boxSize = 150.0;
+  int numOfSingleTap = 0;
+  int numOfDoubleTap = 0;
+  int numOfLongTap = 0;
+
+  @override
   Widget build(BuildContext context) {
-
-    Size screenSize = MediaQuery.of(context).size;
-
-    Orientation screenOrientation = MediaQuery.of(context).orientation;
-
     return Scaffold(
-      backgroundColor: Color(0xFFF97B22),
-    body: SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-              'Screen Size : ${screenSize.width.toStringAsFixed(2)}',
-                  style : TextStyle(color: Color(0xFFFEE8B0),fontSize: 18),
-            textAlign: TextAlign.center,
+      body: Center(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              numOfSingleTap++;
+            });
+          },
+          onDoubleTap: () {
+            setState(() {
+              numOfDoubleTap++;
+            });
+          },
+          onLongPress: () {
+            setState(() {
+              numOfLongTap++;
+            });
+          },
+          child: Container(
+            width: boxSize,
+            height: boxSize,
+            color: Colors.lightBlueAccent,
           ),
-          Text(
-              'Screen Orientation : $screenOrientation',
-                  style : TextStyle(color: Color(0xFFFEE8B0),fontSize: 18),
-            textAlign: TextAlign.center,
-          ),
-        ],
+        ),
       ),
-    ),
+      bottomNavigationBar: Container(
+        color: Colors.blue,
+        child: Text(
+          'Taps: $numOfSingleTap | Double Taps: $numOfDoubleTap | Long Press: $numOfLongTap',
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        ),
+      ),
     );
   }
 }
