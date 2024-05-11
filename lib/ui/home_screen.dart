@@ -13,7 +13,8 @@ class HomeScreen extends StatelessWidget {
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => AddStoryScreen()));
         },
-        child: Center(
+        child: Hero(
+          tag: 'image_animation',
           child: Image.asset(
             'assets/IMG.jpg',
             width: 200,

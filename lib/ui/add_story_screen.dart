@@ -7,7 +7,7 @@ class AddStoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Image.asset('assets/IMG.jpg'),
+      body: Hero(tag: 'image_animation', child: Image.asset('assets/IMG.jpg')),
     );
   }
 }
