@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 import 'package:portofolio/ui/info_detail_screen.dart';
 import 'package:portofolio/ui/add_story_screen.dart';
 
@@ -41,7 +39,7 @@ class HomeScreen extends StatelessWidget {
             child:
               Text("App Info",
               style: TextStyle(
-              color: Colors.deepOrange,
+                  color: Color(0xFFF97B22),
               fontSize: 24),
           ),
           ),
@@ -53,7 +51,7 @@ class HomeScreen extends StatelessWidget {
         title: Text("Account",
           style: TextStyle(
               fontSize: 24,
-              color: Colors.deepOrange
+              color: Color(0xFFF97B22)
           ),
         ),
       ),
@@ -65,7 +63,7 @@ class HomeScreen extends StatelessWidget {
         title: Text("Settings",
           style: TextStyle(
               fontSize: 24,
-              color: Colors.deepOrange
+              color: Color(0xFFF97B22)
           ),
         ),
       ),
@@ -77,7 +75,7 @@ class HomeScreen extends StatelessWidget {
         title: Text("Exit",
           style: TextStyle(
               fontSize: 24,
-              color: Colors.deepOrange
+              color: Color(0xFFF97B22)
           ),
         ),
       ),
@@ -85,12 +83,19 @@ class HomeScreen extends StatelessWidget {
   ),
   );
 
-  AppBar _AppBar(context) => AppBar(title: Text("Jumawa",style: TextStyle(color: Colors.white),),
-    backgroundColor: Colors.deepOrange,
+  AppBar _AppBar(context) => AppBar(
+    iconTheme: IconThemeData(color: Color(0xFFFEE8B0)),
+    title: Text(
+    "Jumawa",
+    style: TextStyle(
+      color: Color(0xFFFEE8B0),
+  ),
+  ),
+    backgroundColor:  Color(0xFFF97B22),
     centerTitle: true,
     actions: [IconButton(onPressed: () {
       Navigator.push(context, MaterialPageRoute(builder: (context) => InfoDetailScreen())
       );
-    }, icon: Icon(Icons.info,color: Colors.white,))],
+    }, icon: Icon(Icons.info,color: Color(0xFFFEE8B0),))],
   );
 }
