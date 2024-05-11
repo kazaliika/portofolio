@@ -15,10 +15,12 @@ class HomeScreen extends StatelessWidget {
         },
         child: Hero(
           tag: 'image_animation',
-          child: Image.asset(
-            'assets/IMG.jpg',
-            width: 200,
-            height: 200,
+          child: Center(
+            child: Image.asset(
+              'assets/IMG.jpg',
+              width: 200,
+              height: 200,
+            ),
           ),
         ),
       ),
