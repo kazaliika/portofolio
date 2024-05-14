@@ -18,7 +18,7 @@ class _InfoDetailScreenState extends State<InfoDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (posX == 0) {
+    if (posX == 0 && posY == 0) {
       centerPosition(context);
     }
     return Scaffold(
@@ -27,17 +27,10 @@ class _InfoDetailScreenState extends State<InfoDetailScreen> {
           top: posY,
           left: posX,
           child: GestureDetector(
-            // onPanUpdate: (DragUpdateDetails details) {
-            //   // posX = max(0, posX + details.delta.dx);
-            //   setState(() {
-            //     posY = max(0, posY + details.delta.dy);
-            //     posX = max(0, posY + details.delta.dx);
-            //   });
-            // },
-            onVerticalDragUpdate: (DragUpdateDetails details) {
+            onPanUpdate: (DragUpdateDetails details) {
               setState(() {
-                double verticalPosition = details.delta.dy;
-                posY += verticalPosition;
+                posX += details.delta.dx;
+                posY += details.delta.dy;
               });
             },
             onHorizontalDragUpdate: (DragUpdateDetails details) {
@@ -46,6 +39,12 @@ class _InfoDetailScreenState extends State<InfoDetailScreen> {
                 posX += horizontalPosition;
               });
             },
+            // onVerticalDragUpdate: (DragUpdateDetails details) {
+            //   setState(() {
+            //     double verticalPosition = details.delta.dy;
+            //     posY += verticalPosition;
+            //   });
+            // },
             onTap: () {
               setState(() {
                 numOfSingleTap++;
