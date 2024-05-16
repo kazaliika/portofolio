@@ -15,7 +15,7 @@ class _InfoDetailScreenState extends State<InfoDetailScreen> {
   late EdgeInsets margin = EdgeInsets.all(0);
 
   void initState() {
-    super.initState();
+    // super.initState();
     setState(() {
       containerColor = Color.fromARGB(
         255,
