@@ -22,6 +22,7 @@ class _AddStoryScreenState extends State<AddStoryScreen> {
   late double margin;
 
   void initState() {
+    super.initState();
     borderRadius = randomBorderRadius();
     margin = randomMargin();
   }
