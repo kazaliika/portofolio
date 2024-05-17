@@ -1,6 +1,6 @@
 # portofolio
 
-A new Flutter project.
+Hands on project by mikti
 
 ## Getting Started
 
