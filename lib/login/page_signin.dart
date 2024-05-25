@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portofolio/core/colors.dart';
 import 'package:portofolio/core/space.dart';
 import 'package:portofolio/core/text_style.dart';
+import 'package:portofolio/login/text_field.dart';
 
 class PageSignIn extends StatefulWidget {
   const PageSignIn({super.key});
@@ -33,7 +34,7 @@ class _PageSignInState extends State<PageSignIn> {
                 style: headline3,
               ),
               SpaceVH(height: 60.0),
-              TextField(),
+              textField(),
             ],
           ),
         ),
