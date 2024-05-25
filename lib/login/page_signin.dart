@@ -34,7 +34,16 @@ class _PageSignInState extends State<PageSignIn> {
                 style: headline3,
               ),
               SpaceVH(height: 60.0),
-              textField(),
+              textField(
+                controller: userName,
+                image: 'user.svg',
+                hintTxt: 'Username',
+              ),
+              textField(
+                controller: userPass,
+                image: 'hide.svg',
+                hintTxt: 'Password',
+              ),
             ],
           ),
         ),

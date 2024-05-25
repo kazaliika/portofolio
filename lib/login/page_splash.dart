@@ -26,7 +26,7 @@ class _PageSplashState extends State<PageSplash> {
               height: height,
               color: Color.fromARGB(255, 5, 96, 165),
               child: Image.asset(
-                'assets/laut.jpg',
+                'assets/image/laut.jpg',
                 height: height,
                 fit: BoxFit.cover,
               ),
