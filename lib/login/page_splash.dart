@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SplashPage extends StatefulWidget {
-  const SplashPage({super.key});
+class PageSplash extends StatefulWidget {
+  const PageSplash({super.key});
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  State<PageSplash> createState() => _PageSplashState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _PageSplashState extends State<PageSplash> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
