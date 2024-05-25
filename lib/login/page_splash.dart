@@ -49,7 +49,7 @@ class _PageSplashState extends State<PageSplash> {
                     RichText(
                       text: TextSpan(children: [
                         TextSpan(
-                          text: 'abcd',
+                          text: 'jumawa',
                           style: headline,
                         ),
                         TextSpan(
