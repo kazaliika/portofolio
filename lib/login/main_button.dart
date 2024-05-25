@@ -32,7 +32,7 @@ class Mainbutton extends StatelessWidget {
           children: [
             if (image != null)
               Image.asset(
-                'assets/$image',
+                'assets/image/$image',
                 height: 25.0,
                 width: 60.0,
               ),

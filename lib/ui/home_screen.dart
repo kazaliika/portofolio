@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           tag: 'image_animation',
           child: Center(
             child: Image.asset(
-              'assets/IMG.jpg',
+              'assets/image/IMG.jpg',
               width: 200,
               height: 200,
             ),
