@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portofolio/core/colors.dart';
 import 'package:portofolio/core/space.dart';
 import 'package:portofolio/core/text_style.dart';
+import 'package:portofolio/login/demotext.dart';
 
 class PageSplash extends StatefulWidget {
   const PageSplash({super.key});
@@ -15,6 +16,7 @@ class _PageSplashState extends State<PageSplash> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: white,
       body: SafeArea(
         child: Stack(
           children: [
@@ -57,8 +59,9 @@ class _PageSplashState extends State<PageSplash> {
                     SpaceVH(height: 20.0),
                     Text(
                       splashText,
+                      textAlign: TextAlign.center,
                       style: headline2,
-                    )
+                    ),
                   ],
                 ),
               ),
