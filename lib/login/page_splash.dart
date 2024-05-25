@@ -3,6 +3,8 @@ import 'package:portofolio/core/colors.dart';
 import 'package:portofolio/core/space.dart';
 import 'package:portofolio/core/text_style.dart';
 import 'package:portofolio/login/demotext.dart';
+import 'package:portofolio/login/main_button.dart';
+import 'package:portofolio/login/page_signin.dart';
 
 class PageSplash extends StatefulWidget {
   const PageSplash({super.key});
@@ -61,6 +63,16 @@ class _PageSplashState extends State<PageSplash> {
                       splashText,
                       textAlign: TextAlign.center,
                       style: headline2,
+                    ),
+                    Mainbutton(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (builder) => PageSignIn()));
+                      },
+                      btnColor: blueButton,
+                      text: 'Ayo Mulai',
                     ),
                   ],
                 ),

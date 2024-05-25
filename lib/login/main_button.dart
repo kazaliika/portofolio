@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portofolio/core/colors.dart';
 import 'package:portofolio/core/text_style.dart';
 
 class Mainbutton extends StatelessWidget {
@@ -23,7 +22,7 @@ class Mainbutton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 70.0,
-        margin: EdgeInsets.symmetric(horizontal: 20.0),
+        margin: const EdgeInsets.symmetric(horizontal: 20.0),
         decoration: BoxDecoration(
           color: btnColor,
           borderRadius: BorderRadius.circular(20.0),
@@ -33,7 +32,7 @@ class Mainbutton extends StatelessWidget {
           children: [
             if (image != null)
               Image.asset(
-                'assets/image/$image',
+                'assets/$image',
                 height: 25.0,
                 width: 60.0,
               ),
