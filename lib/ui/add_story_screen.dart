@@ -14,7 +14,9 @@ class _AddStoryScreenState extends State<AddStoryScreen> {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: Image.network('https://picsum.photos/200/300'),
+          child: Container(
+            child: Image.network('https://picsum.photos/250?image=9'),
+          ),
         ),
       ),
     );
