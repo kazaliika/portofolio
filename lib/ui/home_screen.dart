@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portofolio/login/page_splash.dart';
 import 'package:portofolio/ui/info_detail_screen.dart';
 import 'package:portofolio/ui/add_story_screen.dart';
 
@@ -69,10 +70,20 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => Page(),
+                  ),
+                );
+              },
               leading: Icon(Icons.exit_to_app, size: 35),
               title: Text(
                 "Exit",
-                style: TextStyle(fontSize: 24, color: Color(0xFFF97B22)),
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Color(0xFFF97B22),
+                ),
               ),
             ),
           ],
