@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portofolio/core/colors.dart';
+import 'package:portofolio/core/space.dart';
+import 'package:portofolio/core/text_style.dart';
 
 class PageSplash extends StatefulWidget {
   const PageSplash({super.key});
@@ -31,16 +34,7 @@ class _PageSplashState extends State<PageSplash> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: <Color>[
-                      Color(0xff1f005c),
-                      Color(0xff5b0060),
-                      // Color(0xff870160),
-                      // Color(0xffac255e),
-                      // Color(0xffca485c),
-                      // Color(0xffe16b5c),
-                      // Color(0xfff39060),
-                      // Color(0xffffb56b),
-                    ],
+                    colors: gradient,
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
                   ),
@@ -50,9 +44,21 @@ class _PageSplashState extends State<PageSplash> {
                   children: [
                     RichText(
                       text: TextSpan(children: [
-                        TextSpan(text: 'abcd'),
+                        TextSpan(
+                          text: 'abcd',
+                          style: headline,
+                        ),
+                        TextSpan(
+                          text: '.',
+                          style: headlineDot,
+                        ),
                       ]),
                     ),
+                    SpaceVH(height: 20.0),
+                    Text(
+                      splashText,
+                      style: headline2,
+                    )
                   ],
                 ),
               ),
