@@ -15,27 +15,7 @@ class _AnimeState extends State<Anime> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _AppBar(context),
-      body: MultiProvider(
-        providers: [
-          Provider(create: (context) => FavoriteListModel()),
-          ChangeNotifierProvider<FavoriteListModel, FavoritPageModel>(
-            create: (context) => FavoritePageModel(),
-            update: (context, favoritelist, favoritepage) {
-              if (favoritepage == null)
-                throw ArgumentError.notNull('favoritepage');
-              favoritepage.favoritelist = favoritelist;
-              return favoritepage;
-            },
-          ),
-        ],
-        child: MaterialApp(
-          initialRoute: '/',
-          routes: {
-            '/': (context) => FavoriteList(),
-            '/favoritepage': (context) => FavoritePage(),
-          },
-        ),
-      ),
+      body: ,
     );
   }
 
