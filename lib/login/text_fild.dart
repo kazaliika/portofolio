@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portofolio/core/colors.dart';
 import 'package:portofolio/core/text_style.dart';
 
-Widget textField({
+Widget textFild({
   required String hintTxt,
   required String image,
   required TextEditingController controller,
@@ -32,7 +32,7 @@ Widget textField({
             keyboardType: keyBordType,
             decoration: InputDecoration(
               border: InputBorder.none,
-              hintText: 'hintTxt',
+              hintText: hintTxt,
               hintStyle: hintStyle,
             ),
             style: headline2,
