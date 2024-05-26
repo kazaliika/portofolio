@@ -20,17 +20,41 @@ class FavoriteListModel {
   ];
 
   static List<String> itemImages = [
-    Image.network(
-        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
-    Image.network(
-        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
-    Image.network(
-        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
-    Image.network(
-        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
-    Image.network(
-        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
-    Image.network(
-        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
+    ('assets/image/naruto.png'),
+    ('assets/image/aot.jpg'),
+    ('assets/image/haikyuu.jpg'),
+    ('assets/image/boruto.jpg'),
+    ('assets/image/kaiju.jpg'),
+    ('assets/image/kanojo.jpg'),
   ];
+
+  Item getById(int id) => Item(
+        id,
+        itemNames[id % itemNames.length],
+        itemSubtitle[id % itemSubtitle],
+        itemImages[id % itemImages],
+      );
+
+  Item getByPosition(int position) {
+    return getById(position);
+  }
+
+  class Item {
+    final int id;
+    final String name;
+    final String subtitle;
+    final String image;
+
+    const Item(
+      this.id,
+      this.name,
+      this.subtitle,
+      this.image,
+    );
+    @override
+    int get hashCode => id;
+    
+    @override
+    bool operator ==(Object other) => other is Item && other.id == id;
+  }
 }

@@ -28,6 +28,13 @@ class _AnimeState extends State<Anime> {
             },
           ),
         ],
+        child: MaterialApp(
+          initialRoute: '/',
+          routes: {
+            '/': (context) => FavoriteList(),
+            '/favoritepage': (context) => FavoritePage(),
+          },
+        ),
       ),
     );
   }
