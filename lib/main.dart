@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './ui/home_screen.dart';
+import 'package:portofolio/ui/bottom_nav_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Jumawa App",
-      home: HomeScreen(),
+      home: BottomNavBar(),
     );
   }
 }

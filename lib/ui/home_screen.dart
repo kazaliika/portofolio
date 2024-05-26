@@ -1,5 +1,5 @@
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
+
 import 'package:portofolio/login/page_splash.dart';
 import 'package:portofolio/ui/info_detail_screen.dart';
 import 'package:portofolio/ui/add_story_screen.dart';
@@ -15,37 +15,25 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: _AppBar(context),
-        body: InkWell(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => AddStoryScreen()));
-          },
-          child: Hero(
-            tag: 'image_animation',
-            child: Center(
-              child: Image.asset(
-                'assets/image/IMG.jpg',
-                width: 200,
-                height: 200,
-              ),
+      appBar: _AppBar(context),
+      body: InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AddStoryScreen()));
+        },
+        child: Hero(
+          tag: 'image_animation',
+          child: Center(
+            child: Image.asset(
+              'assets/image/IMG.jpg',
+              width: 200,
+              height: 200,
             ),
           ),
         ),
-        drawer: _Drawer(context),
-        bottomNavigationBar: ConvexAppBar(
-          style: TabStyle.react,
-
-          items: [
-            TabItem(icon: Icons.home, title: 'Home'),
-            TabItem(icon: Icons.map, title: 'Discovery'),
-            TabItem(icon: Icons.add, title: 'Add Story'),
-            TabItem(icon: Icons.movie, title: 'Anime'),
-            TabItem(icon: Icons.people, title: 'Profile'),
-          ],
-          backgroundColor: Color(0xFFF97B22),
-          // onTap: (int i) => print('click index=$i'),
-        ));
+      ),
+      drawer: _Drawer(context),
+    );
   }
 
   Drawer _Drawer(context) => Drawer(
