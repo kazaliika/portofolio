@@ -32,7 +32,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           TabItem(icon: Icons.map, title: 'Discovery'),
           TabItem(icon: Icons.add, title: 'Add Story'),
           TabItem(icon: Icons.movie, title: 'Anime'),
-          // TabItem(icon: Icons.people, title: 'Profile'),
         ],
         backgroundColor: Color(0xFFF97B22),
         initialActiveIndex: 0,

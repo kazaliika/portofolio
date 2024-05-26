@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:portofolio/login/page_splash.dart';
 import 'package:portofolio/ui/info_detail_screen.dart';
 import 'package:portofolio/ui/add_story_screen.dart';
+import 'package:portofolio/ui/screens/favorite.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -60,6 +61,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             ListTile(
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => FavoritePage(),
+                  ),
+                );
+              },
               leading: Icon(Icons.bookmark_border, size: 35),
               title: Text(
                 "Saved",
