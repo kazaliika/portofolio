@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portofolio/ui/add_story_screen.dart';
+import 'package:portofolio/ui/anime.dart';
 import 'package:portofolio/ui/home_screen.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
@@ -16,8 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     HomeScreen(),
     const Text('Menjelajahi'),
     AddStoryScreen(),
-    AddStoryScreen(),
-    AddStoryScreen(),
+    Anime(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           TabItem(icon: Icons.map, title: 'Discovery'),
           TabItem(icon: Icons.add, title: 'Add Story'),
           TabItem(icon: Icons.movie, title: 'Anime'),
-          TabItem(icon: Icons.people, title: 'Profile'),
+          // TabItem(icon: Icons.people, title: 'Profile'),
         ],
         backgroundColor: Color(0xFFF97B22),
         initialActiveIndex: 0,

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../login/page_splash.dart';
+import 'info_detail_screen.dart';
+
 class AddStoryScreen extends StatefulWidget {
   const AddStoryScreen({super.key});
 
@@ -25,6 +28,7 @@ class _AddStoryScreenState extends State<AddStoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: _AppBar(context),
       body: Center(
         child: MouseRegion(
           onHover: _onHover,
@@ -47,6 +51,83 @@ class _AddStoryScreenState extends State<AddStoryScreen> {
           ),
         ),
       ),
+      drawer: _Drawer(context),
     );
   }
+
+  Drawer _Drawer(context) => Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              child: Text(
+                "App Info",
+                style: TextStyle(color: Color(0xFFF97B22), fontSize: 24),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.person_outlined, size: 35),
+              title: Text(
+                "Account",
+                style: TextStyle(fontSize: 24, color: Color(0xFFF97B22)),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings_applications, size: 35),
+              title: Text(
+                "Settings",
+                style: TextStyle(fontSize: 24, color: Color(0xFFF97B22)),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.bookmark_border, size: 35),
+              title: Text(
+                "Saved",
+                style: TextStyle(fontSize: 24, color: Color(0xFFF97B22)),
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => PageSplash(),
+                  ),
+                );
+              },
+              leading: Icon(Icons.exit_to_app, size: 35),
+              title: Text(
+                "Exit",
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Color(0xFFF97B22),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+
+  AppBar _AppBar(context) => AppBar(
+        iconTheme: IconThemeData(color: Color(0xFFFEE8B0)),
+        title: Text(
+          "Jumawa",
+          style: TextStyle(
+            color: Color(0xFFFEE8B0),
+          ),
+        ),
+        backgroundColor: Color(0xFFF97B22),
+        centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InfoDetailScreen()));
+              },
+              icon: Icon(
+                Icons.info,
+                color: Color(0xFFFEE8B0),
+              ))
+        ],
+      );
 }

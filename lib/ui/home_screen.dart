@@ -60,6 +60,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             ListTile(
+              leading: Icon(Icons.bookmark_border, size: 35),
+              title: Text(
+                "Saved",
+                style: TextStyle(fontSize: 24, color: Color(0xFFF97B22)),
+              ),
+            ),
+            ListTile(
               onTap: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
