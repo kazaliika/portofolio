@@ -1,15 +1,36 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
-class FavoritListModel extends StatefulWidget {
-  const FavoritListModel({super.key});
+class FavoriteListModel {
+  static List<String> itemNames = [
+    'Naruto Shipudden',
+    'Attack On Titan',
+    'Haikyuu',
+    'Boruto Two Blue Vortex',
+    'Kaiju No.8',
+    'Kanojo Okarishimasu',
+  ];
 
-  @override
-  State<FavoritListModel> createState() => _FavoritListModelState();
-}
+  static List<String> itemSubtitle = [
+    'ini adalah anime yang bagus',
+    'ini adalah anime yang bagus',
+    'ini adalah anime yang bagus',
+    'ini adalah anime yang bagus',
+    'ini adalah anime yang bagus',
+    'ini adalah anime yang bagus',
+  ];
 
-class _FavoritListModelState extends State<FavoritListModel> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+  static List<String> itemImages = [
+    Image.network(
+        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
+    Image.network(
+        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
+    Image.network(
+        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
+    Image.network(
+        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
+    Image.network(
+        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
+    Image.network(
+        'https://imgsrv.crunchyroll.com/cdn-cgi/image/format=auto,fit=contain,width=480,height=720,quality=85/catalog/crunchyroll/01ec367b44f0a568430a957e042639af.jpe'),
+  ];
 }
