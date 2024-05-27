@@ -1,17 +1,26 @@
-import 'package:flutter/material.dart';
-import 'package:portofolio/ui/provider/favorite_provider.dart';
+// ignore_for_file: non_constant_identifier_names
 
-class FavoritePage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:portofolio/ui/anime.dart';
+import 'package:portofolio/ui/provider/favorite_provider.dart';
+import 'package:share/share.dart';
+
+import '../info_detail_screen.dart';
+
+class FavoritePage extends StatefulWidget {
   const FavoritePage({Key? key}) : super(key: key);
 
+  @override
+  State<FavoritePage> createState() => _FavoritePageState();
+}
+
+class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
     final provider = FavoriteProvider.of(context);
     final words = provider.words;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Favorites'),
-      ),
+      appBar: _AppBar(context),
       body: ListView.builder(
         itemCount: words.length,
         itemBuilder: (context, index) {
@@ -31,4 +40,43 @@ class FavoritePage extends StatelessWidget {
       ),
     );
   }
+
+  AppBar _AppBar(context) => AppBar(
+        iconTheme: IconThemeData(color: Color(0xFFFEE8B0)),
+        title: Text(
+          "Favorite",
+          style: TextStyle(
+            color: Color(0xFFFEE8B0),
+          ),
+        ),
+        leading: BackButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Anime()));
+          },
+        ),
+        backgroundColor: Color(0xFFF97B22),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Share.share('contoh button share simple');
+            },
+            icon: Icon(
+              Icons.mobile_screen_share,
+              color: Color(0xFFFEE8B0),
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => InfoDetailScreen()));
+            },
+            icon: Icon(
+              Icons.info,
+              color: Color(0xFFFEE8B0),
+            ),
+          ),
+        ],
+      );
 }
