@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:portofolio/ui/anime.dart';
 import 'package:portofolio/ui/provider/favorite_provider.dart';
-import 'package:share/share.dart';
 
 import '../info_detail_screen.dart';
 
@@ -59,9 +58,7 @@ class _FavoritePageState extends State<FavoritePage> {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {
-              Share.share('contoh button share simple');
-            },
+            onPressed: () {},
             icon: Icon(
               Icons.mobile_screen_share,
               color: Color(0xFFFEE8B0),
